@@ -4,6 +4,7 @@ from datetime import datetime, timedelta
 import asyncio
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from pytz import timezone
+import os
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -46,4 +47,4 @@ async def delete_old_messages():
 
     print(f"[{datetime.now()}] ✅ Đã xóa {deleted_count} tin nhắn cũ hơn 7 ngày.")
 
-bot.run("MTM3NTM0ODQ5ODg1MzAwMzMwNA.GOX7jF.J9WDPGyzGwpTVsUs_abMWrHMmfDpvaWsjxHE7k")  # 🛑 Dán token thật của bạn tại đây
+bot.run(os.getenv("TOKEN"))
